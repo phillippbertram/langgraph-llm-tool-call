@@ -37,7 +37,7 @@ SERPER_API_KEY=your-serper-api-key
 3. Install dependencies using uv:
 
 ```bash
-uv pip install -e .
+uv sync
 ```
 
 ## Usage
@@ -45,7 +45,7 @@ uv pip install -e .
 1. Start the chat interface:
 
 ```bash
-python app.py
+uv run app.py
 ```
 
 2. Open your browser and navigate to `http://localhost:7860`
@@ -69,6 +69,14 @@ The project uses LangGraph to manage the conversation flow between different com
    - Web search capabilities via Google Serper
    - Conversation state management
    - Tool execution flow
+
+### Graph Visualization
+
+The following diagram shows the flow of the LangGraph implementation:
+
+![LangGraph Flow](graph.png)
+
+The graph shows how messages flow between the agent and tools nodes, with the agent being able to decide when to use tools based on the conversation context.
 
 ## Development
 
